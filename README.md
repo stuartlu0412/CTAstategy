@@ -1,1 +1,1 @@
-# CTAstategy
+# CTAstrategy
