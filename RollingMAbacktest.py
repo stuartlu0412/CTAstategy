@@ -30,6 +30,7 @@ df = df[~df.index.duplicated(keep='first')]
 
 
 #backtest
+#
 price = df['Close']
 
 (in_sample_prices, in_sample_dates), (out_sample_prices, out_sample_dates) = price.vbt.rolling_split(n=20, window_len=365 * 2, set_lens=(180, ), left_to_right=False)
