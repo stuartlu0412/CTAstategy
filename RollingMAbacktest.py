@@ -14,7 +14,7 @@ value = client.get_historical_klines(symbol = 'BTCUSDT',
                                       klines_type=HistoricalKlinesType.FUTURES)
 
 columns_name = ['openTime', 'Open', 'High', 'Low', 'Close', 'Volume', 'closeTime', 
-                'quoteVolume', 'numTrade', 'takerBuyVolume', 'takerBuyQuoteVolume', 'ignore']
+                'quoteVolume', 'numTrade', 'takerBuy Volume', 'takerBuyQuoteVolume', 'ignore']
 
 df = pd.DataFrame(value)
 df.columns = columns_name
@@ -30,7 +30,7 @@ df = df[~df.index.duplicated(keep='first')]
 
 
 #backtest
-#
+
 price = df['Close']
 
 (in_sample_prices, in_sample_dates), (out_sample_prices, out_sample_dates) = price.vbt.rolling_split(n=20, window_len=365 * 2, set_lens=(180, ), left_to_right=False)
